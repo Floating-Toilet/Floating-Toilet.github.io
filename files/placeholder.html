@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Placeholder</title>
+    <link rel="icon" href="../images/WIZARD.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/WIZARD.png" type="image/x-icon">
+    <style>
+        /* Im not blinding you */
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<!-- I dont think this is overbuilt-->
+
+<body onload="setTimeout(goBack, 3000); setInterval(countDown, 1000)">
+    <h1>Going Back in <span id="countDown">3</span> Seconds</h1>
+    <button onclick="history.back()">Go Back</button><br>
+    <noscript>Turned JavaScript off huh? (Or its not supported)</noscript>
+</body>
+<script>
+    let CountDown = 3
+    function goBack() {
+        history.go(-1);
+    }
+    function countDown() {
+        CountDown = CountDown - 1;
+        document.getElementById("countDown").innerHTML = CountDown;
+    }
+</script>
+
+</html>

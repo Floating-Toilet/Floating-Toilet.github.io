@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minecraft Server</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../images/placeholder.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/placeholder.png" type="image/x-icon">
+    <style>
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <img src="../images/placeholder.png" width="40" height="40" class="headimg">
+            <h1><a href="../index.html" style="padding: 10px;">The Hebrew Hammer</a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../resources.html">Resources</a></li>
+                <li><a href="../randomstuff.html">Other Unrelated Stuff</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>The Hebrew Hammer: Overview</h2>
+    Me and a friend attempt to make a minecraft server at school.
+    <h2>Objectives</h2>
+    • Deploy a stable, secure multiplayer Minecraft server<br>
+    • Learn Linux system administration<br>
+    • Realize that it is true that IT takes a <a href="../images/ITticket.jpg" style="color: white; cursor: help;">long
+        time</a> time to respond to tickets<br>
+    • Find a way around port fowarding anyways with <a href="https://playit.gg">Playit.gg</a><br>
+    <h2>Technologies Used</h2>
+    • <a href="https://ubuntu.com/">Ubuntu Server</a><br>
+    • <a href="https://fabricmc.net">Fabric Minecraft server software</a><br>
+    • <a href="https://playit.gg">Playit.gg</a>
+    <hr>
+    <h2>The Physical System(s)</h2>
+    Me and a friend had a wonderful idea of setting up a Minecraft server at Auburn as an "extra credit project" (Our
+    instructor encouraged the class to do something in the lab to get hands on experience with the skills learned in
+    class)<br><br>
+    The first computer was a spare and mostly gutted out pc, where missing parts were found in PCs that were in similar
+    states.<br><br>
+    <img src="../images/PC1.jpg" style="float: left;padding-right: 8px;" width="450" height="300">
+    This marked the beginning of the madness, after successfully booting the pc into BIOS then burning a flash drive
+    with Ubuntu server with Rufus and installing the OS. (I ended up being confused with CIDR slash notation for the
+    subnet mask during installation. [/X is the number of bits within the mask])<br>
+    I had no idea how to <i>really</i> use the Linux command line. So most of the process was aided by AI and
+    google.<br>
+    I ended up learning from AI and the TryHackMe Linux modules.<br>
+    <span onclick="showTable()" style="color: #ff8c00; cursor: pointer;">How to install java and fabric:</span><br>
+    <table style="display: none;" id="table">
+        <thead>
+            <tr>
+                <th style="text-align: left;">
+                    Bash:
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="copy">
+                    sudo apt update && sudo apt upgrade -y # Update and upgrade packages
+                </td>
+            </tr>
+            <tr>
+                <td id="copy">
+                    sudo apt install openjdk-17-jdk -y # Install the java runtime (You may have to install a
+                    different version depending on the minecraft version)
+                </td>
+            </tr>
+            <tr>
+                <td id="copy">
+                    java -version # Verify java has installed
+                </td>
+            </tr>
+            <tr>
+                <td id="copy">
+                    mkdir ./minecraft-server && cd minecraft-server # Make and enter a folder where the server files
+                    will reside
+                </td>
+            </tr>
+            <tr>
+                <td id="copy">
+                    curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.21.11/0.18.4/1.1.1/server/jar # Get the
+                    fabric.jar file
+                </td>
+            </tr>
+            <tr>
+                <td id="copy">
+                    java -Xmx#G <b>nameof.jar</b> -jar nogui # Start the server for the first time, =Xmx#G is for the
+                    max
+                    amount of RAM java can use, I would leave 2-3GB for the system, the server will automatically
+                    close as you need to agree to the EULA
+                </td>
+            </tr>
+            <tr>
+                <td id="copy">
+                    nano eula.txt # Change EULA from false to true
+                </td>
+            </tr>
+            <tr>
+                <td id="copy">
+                    java -Xmx8G fabric.jar -jar nogui # Run the command again, now minecraft with the fabric modloader
+                    is running on your system
+                </td>
+            </tr>
+        </tbody>
+    </table><br><br><br><br><br><br><br><br><br><br>
+    Wait, how come only I can access the server? This is because you haven't made it available outside your network.<br>
+    How? There are multiple ways to do so (port fowarding, vpn[technically this is people coming into your network but
+    whatever], reverse proxy). In this project we intended to do port forwarding however we had some issues.<br>
+    Port Fowarding, How to: (Steps will vary based on your model, in this example I will be using <a
+        href="https://ui.linksys.com/SmartWi-FiFamilyRouters/EA2700/1.0.12">Linksys</a>)<br>
+    1. Log into your routers interface<br>
+    2. Go to Applications and Gaming<br>
+    3. In the single port fowarding tab set the info to the following:
+    <table>
+        <tbody>
+            <tr>
+                <tc>
+                    <td>
+                        External Port
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        Internal Port
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        Protocol
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        To IPv4 Address
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        Enabled
+                    </td>
+                </tc>
+            </tr>
+            <tr>
+                <tc>
+                    <td>
+                        25565
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        25565
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        Both
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        This goes to your IP address of the computer the server is running on
+                    </td>
+                </tc>
+                <tc>
+                    <td>
+                        True
+                    </td>
+                </tc>
+            </tr>
+        </tbody>
+    </table>
+    <p>I would recommend using a different external port as bots scan the internet for mincraft servers and attempt to commit various malicious actions.</p>
+    <img src="../images/Portfoward.png" style="float: left;padding-right: 8px;" width="500"><br><br><br>
+    <hr>
+    <u>
+        <h2><a href="../images/ITticket.jpg">The port fowarding shenanigans</a></h2>
+    </u>
+    As seen in the image we had to wait for the schools IT dept to port forward on the schools side of the network. On
+    our end we were given access to the lab router where the port forwarding rules were set.
+    Because the lab network was behind double NAT, both the lab and the edge router of the school need to foward
+    ports.<br>
+    Obviously IT wouldn't let us in the router on the other end so we had to wait as they configured their end. We at
+    some point had received an email stating they had configured their end, after booting minecraft and using the
+    provided public IP address, it did not work.
+    "Lets check our end"<br>
+    Connect to internal IP 192.168.1.9: Success<br>
+    Connect to WAN IP of Lab router: Success<br>
+    Connect to WAN IP of school edge router: Failure<br>
+    "Its gotta be their end, send another ticket"<br>
+    "Things look fine on our end"<br>
+    At this point me, my friend, and even the instructor were confused, if things are OK on both ends why is it not
+    available?<br>
+    <h6>We never figured it out</h6>
+    <hr>
+    <h2>True server rack</h2>
+    <h6>I was not able to get a picture of the server when it was still in the rack, because our program was being cut
+        and merged so our instructor had taken back his personal equipment. So imagine two HP DL360 G6 here however, we
+        had only used one.</h6>
+    <img src="../images/PC2.jpg" width="450" height="300"><br>
+    During the port fowarding shenanigans I had decided on moving over to a true server rack, why? Well why not.<br>
+    Not going to comment much it was really simple to get it up and working.
+    Had to reinstall Ubuntu, configure RAID as it is a server <i>server</i>
+    <hr>
+    <h1>Reverse proxy</h1>
+    I don't really recall how I came up with this solution, anyways. After making sure a reverse proxy would allow
+    outside connection, I did some research on how to set one up.<br>
+    This lead me to Cloudflare Tunnel, unfortunately I had no domain to call my own to use. Next up was Ngrok but it
+    needed a subscription for TCP connections. (Made sense, can't make it too easy to serve malware)<br>
+    Finally I found Playit.gg, they were able to host the connections I needed (TCP,UDP [Bedrock is different and needs
+    UDP])
+    <dl>
+        <dt>
+            <h3>Setup:</h3>
+        </dt>
+        <dd>
+            Make an account
+        </dd>
+        <dd>
+            Install the program on the machine hosting the server
+        </dd>
+        <dd>
+            Connect the machine to your account using the code it provides
+        </dd>
+        <dd>
+            Set up an tunnel based on your needs
+        </dd>
+        <dd>
+            Share the address
+        </dd>
+    </dl>
+    <hr>
+    <h2>In Conclusion(?)</h2>
+    I don't really know how to end this so I'm just going to put a few thoughts and comments I have.<br>
+    1. I had a lot of fun, that's probably the most important thing.<br>
+    2. I did learn quite a few things relating to Linux and Networking.<br>
+    3. By the time the server was accessible online everyone had already phased out of their 2 week minecraft phase.<br>
+    4. A power outage also fried one of the CPUs inside the server so I just set up the server on a personal computer at
+    home.<br>
+    4a. Still ended up using playit for outside connections instead of port fowarding despite being my network.
+    <script>
+        let tableShown = 0;
+        function showTable() {
+            if (tableShown == 0) {
+                document.getElementById("table").style.display = "";
+                tableShown = 1;
+            } else {
+                document.getElementById("table").style.display = "none";
+                tableShown = 0;
+            }
+        }
+    </script>
+
+    <br><br><br><br><!--Primitive? Yes. Functional? Also yes.-->
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Raspberry Pi Cluster</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../images/placeholder.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/placeholder.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-identity">
+            <img src="../images/placeholder.png" width="40" height="40" class="headimg">
+            <h1><a href="../index.html" style="padding: 10px;">Raspberry Pi Cluster</a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../resources.html">Resources</a></li>
+                <li><a href="../randomstuff.html">Other Unrelated Stuff</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Raspberry Pi Cluster: Overview</h2>
+    <p>
+        Exploring cluster computing on a small scale and learning about the limitations of ARM.
+    </p>
+    <hr>
+    <h2>Setup:</h2>
+    <ul>
+        <li>Raspberry Pi OS</li>
+        <li>8 <abbr title="Is Pis the correct plural?">Pis</abbr></li>
+        <li>Managed Switch for exploration outside of Cisco Packet Tracer</li>
+    </ul>
+    <h2>What I learned</h2>
+    <ul>
+        <li>ARM and 32 Bit limitations</li>
+        <li>Network Switch Management</li>
+        <li>Low Power Cluster Computing</li>
+    </ul>
+    <hr>
+    <img src="../images/PICluster.jpg" style="float: left;padding-right: 8px;" width="450" height="300">
+    <p>There were more PIs in the class however there was not enough MicroSD cards. Yes the Raspberry pi 2b does support
+        PXE however the specific version I had did not have this functionality. With 8 Pis I could do... nothing much,
+        not many programs support ARM 32 Bit chips, I was really bummed out with this info as I was hoping to run
+        <a href="https://foldingathome.org/">Folding At Home</a>. While thinking on what I could do the new instructor
+        for my senior year class came up with "G-Coin" <span style="font-size: x-small;">I will be talking about this
+            later</span> in hopes to teach the concept of hashing to his programming class. This was a perfect program
+        to run on the PIs as it was just a simple Python script to mine (Albeit not very optimized, but I had just asked
+        ChatGPT to optimize it to use the whole CPU, it even recommended using C++ to facilitate GPU mining on a PC with
+        an dedotated GPU [I couldn't
+        get it set up]) It got about 16 KHashes/Sec which compared to the other miners and my rig was tiny.
+    </p>
+    <p>
+        The use of an managed switch was unnecessary however, I had decided to use one regardless as my only exposure
+        was from Cisco Packet Tracer. But physically interacting with one, Plugging in the ethernet cables for the Pis,
+        the console port cable and setting up serial terminal communication with PuTTY, and power will always teach me
+        more than a textbook. I dont recall if I had done any configurations as entering commands is the same as <abbr
+            title="Cisco Packet Tracer">PT</abbr> of which I have had plenty of experience on.
+    </p>
+    <br>
+    <hr>
+    <h2>Possible Improvements</h2>
+    <ul>
+        <li>
+            Simply getting a newer generation of Pis
+        </li>
+        <li>
+            Using <a href="https://github.com/FEX-Emu/FEX">FEX-Emu</a> for additional program support
+        </li>
+    </ul>
+</body>
+
+</html>

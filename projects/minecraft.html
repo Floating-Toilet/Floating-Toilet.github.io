@@ -109,7 +109,8 @@
                 </td>
             </tr>
         </tbody>
-    </table><br><br><br><br><br><br><br><br><br><br>
+    </table>
+    <hr>
     Wait, how come only I can access the server? This is because you haven't made it available outside your network.<br>
     How? There are multiple ways to do so (port fowarding, vpn[technically this is people coming into your network but
     whatever], reverse proxy). In this project we intended to do port forwarding however we had some issues.<br>
@@ -200,9 +201,9 @@
     <h6>We never figured it out</h6>
     <hr>
     <h2>True server rack</h2>
-    <h6>I was not able to get a picture of the server when it was still in the rack, because our program was being cut
+    <p>I was not able to get a picture of the server when it was still in the rack, because our program was being cut
         and merged so our instructor had taken back his personal equipment. So imagine two HP DL360 G6 here however, we
-        had only used one.</h6>
+        had only used one.</p>
     <img src="../images/PC2.jpg" width="450" height="300"><br>
     During the port fowarding shenanigans I had decided on moving over to a true server rack, why? Well why not.<br>
     Not going to comment much it was really simple to get it up and working.
@@ -213,7 +214,7 @@
     I don't really recall how I came up with this solution, anyways. After making sure a reverse proxy would allow
     outside connection, I did some research on how to set one up.<br>
     This lead me to Cloudflare Tunnel, unfortunately I had no domain to call my own to use. Next up was Ngrok but it
-    needed a subscription for TCP connections. (Made sense, can't make it too easy to serve malware)<br>
+    needed a subscription for TCP connections.<br>
     Finally I found Playit.gg, they were able to host the connections I needed (TCP,UDP [Bedrock is different and needs
     UDP])
     <dl>

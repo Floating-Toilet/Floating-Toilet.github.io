@@ -84,16 +84,8 @@
                 main:
 
                 other:
-                scouting experience
-                demolay experience
-                lab experience
+
             -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <p>This site is still a work in progress</p>
-            <span class="close" onclick="closeModal()">OK</span>
-        </div>
-    </div>
     <h1>Main Page</h1>
     <b>I build stuff, break stuff, and figure out why it broke.</b>
     <p>
@@ -175,29 +167,6 @@
             <li>Upgrading my <a href="./projects/homeserver.html">Homelab</a></li>
         </ul>
     </p>
-    <script>
-        function userSeen() {
-            const cookies = document.cookie.split('; ');
-            for (const cookie of cookies) {
-                const [key, value] = cookie.split('=');
-                if (key === "UserSeen" && value === "Yes") {
-                    return true;
-                }
-            }
-            return false;
-        }
-        function openModal() {
-            if (userSeen()) {
-                closeModal()
-            } else {
-                document.getElementById("modal").style.display = "block";
-            }
-        }
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-            document.cookie = "UserSeen=Yes; max-age=28800; path=/";
-        }
-    </script>
 </body>
 
 </html>

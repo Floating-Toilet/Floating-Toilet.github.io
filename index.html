@@ -8,14 +8,65 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="./images/placeholder.png" type="image/x-icon">
     <link rel="shortcut icon" href="./images/placeholder.png" type="image/x-icon">
+    <style>
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
+        }
+
+        .modal-content {
+            background-color: #333;
+            padding: 20px;
+            margin: 15% auto;
+            width: 50%;
+            font-size: 32px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ff8c00;
+        }
+
+        .close {
+            float: bottom;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 2px solid #ff8c00;
+            border-radius: 5px;
+            background-color: black;
+        }
+
+        tr {
+            height: 100px;
+        }
+
+        td {
+            transition: transform .2s;
+            margin: 0 auto;
+            text-align: center;
+            vertical-align: top;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: #ff8c00;
+            transform: scale(1.5);
+        }
+    </style>
 </head>
 
 <body>
-
     <header class="site-header">
         <div class="site-identity">
             <img src="./images/placeholder.png" width="40" height="40" class="headimg">
-            <h1><a href="index.html">⠀Home</a></h1>
+            <h1><a href="index.html">⠀Home</a></h1>⠀<img src="./images/construction.gif">
             <!--That is unicode character 2800 "Braille Pattern Blank" cause I'm too lazy to figure out the right css styling-->
         </div>
         <nav class="site-navigation">
@@ -27,11 +78,126 @@
             </ul>
         </nav>
     </header>
+    <!--stuff to add:
+                projects:
 
+                main:
+
+                other:
+                scouting experience
+                demolay experience
+                lab experience
+            -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p>This site is still a work in progress</p>
+            <span class="close" onclick="closeModal()">OK</span>
+        </div>
+    </div>
     <h1>Main Page</h1>
-<p>NOTICE:<br>This site is very much a work in progress</p>
-<p>You know what? Have a neocities gif:</p>
-<img src="./images/construction.gif">
+    <b>I build stuff, break stuff, and figure out why it broke.</b>
+    <p>
+        Hi my name is Dustin. I build homelab projects, self host services, and experiment with networking to learn
+        cybersecurity and network administration. I'm currently pursuing networking and the basics of security while
+        building hands on infrastructure projects.
+    </p>
+    <noscript>Javascript is required for navigation</noscript>
+    <table style="width: auto" align="center">
+        <tbody>
+            <tr>
+                <td onclick="location.href='./projects.html'">
+                    Projects<br>
+                    <img src="./images/clueless.gif" width="100" height="auto">
+                </td>
+                <td onclick="location.href='./files/placeholder.html'">
+                    Resume<br>
+                    <img src="./images/placeholder.png" width="100" height="auto">
+                </td>
+                <td onclick="location.href='https://github.com/Floating-Toilet'">
+                    Github<br>
+                    <img src="./images/GitHub_Invertocat_White.png" width="100" height="auto">
+                </td>
+                <td>
+                    Contact<br>
+                    Email: email@email.com
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2>Featured Projects</h2>
+    <div style="display: flex; justify-content: center;">
+    <a href="./projects/minecraft.html"><img src="./images/PC1.jpg" width="300" style="margin: 7px;"></a>
+    <a href="./projects/rasppicluster.html"><img src="./images/PICluster.jpg" width="300" style="margin: 7px;"></a>
+    </div>
+    <hr>
+    <h2>Skills</h2>
+    <p>
+        <b>Networking</b>
+        <ul>
+            <li>VLANs</li>
+            <li>Subnetting</li>
+            <li>Routing</li>
+            <li>Firewall configuration</li>
+            <li>IOS configuration</li>
+            <li>Endpoint configuration</li>
+        </ul>
+        <b>Systems</b>
+        <ul>
+            <li>Windows</li>
+            <li>Windows Administration</li>
+            <li>Linux</li>
+            <li>Virtualization</li>
+            <li>Hardware & Software Troubleshooting</li>
+        </ul>
+        <b>Certifications</b>
+        <ul>
+            <li>10 Hour OSHA General</li>
+            <li>CCST Networking</li>
+            <li>CCST IT Support</li>
+        </ul>
+    </p>
+    <hr>
+    <h2>What im currently working on</h2>
+    <p>
+        <b>Certifications</b>
+        <ul>
+            <li>CompTIA A+</li>
+            <li>CompTIA Security+</li>
+        </ul>
+        <b>Cybersecurity</b>
+        <ul>
+            <li><a href="https://tryhackme.com">TryHackMe</a></li>
+            <li><a href="https://www.hackthissite.org/">HackThisSite</a></li>
+        </ul>
+        <b>Projects</b>
+        <ul>
+            <li>Upgrading my <a href="./projects/homeserver.html">Homelab</a></li>
+        </ul>
+    </p>
+    <script>
+        function userSeen() {
+            const cookies = document.cookie.split('; ');
+            for (const cookie of cookies) {
+                const [key, value] = cookie.split('=');
+                if (key === "UserSeen" && value === "Yes") {
+                    return true;
+                }
+            }
+            return false;
+        }
+        function openModal() {
+            if (userSeen()) {
+                closeModal()
+            } else {
+                document.getElementById("modal").style.display = "block";
+            }
+        }
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+            document.cookie = "UserSeen=Yes; max-age=28800; path=/";
+        }
+    </script>
 </body>
 
 </html>

@@ -9,39 +9,6 @@
     <link rel="icon" href="./images/placeholder.png" type="image/x-icon">
     <link rel="shortcut icon" href="./images/placeholder.png" type="image/x-icon">
     <style>
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Semi-transparent background */
-        }
-
-        .modal-content {
-            background-color: #333;
-            padding: 20px;
-            margin: 15% auto;
-            width: 50%;
-            font-size: 32px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #ff8c00;
-        }
-
-        .close {
-            float: bottom;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 5px 10px;
-            border: 2px solid #ff8c00;
-            border-radius: 5px;
-            background-color: black;
-        }
-
         tr {
             height: 100px;
         }
@@ -66,7 +33,8 @@
     <header class="site-header">
         <div class="site-identity">
             <img src="./images/placeholder.png" width="40" height="40" class="headimg">
-            <h1><a href="index.html">⠀Home</a></h1>⠀<img src="./images/construction.gif">
+            <h1><a href="index.html">⠀Home</a></h1>
+            ⠀<img src="./images/construction.gif">
             <!--That is unicode character 2800 "Braille Pattern Blank" cause I'm too lazy to figure out the right css styling-->
         </div>
         <nav class="site-navigation">
@@ -79,13 +47,13 @@
         </nav>
     </header>
     <!--stuff to add:
-                projects:
-
-                main:
-
-                other:
-
-            -->
+         projects:
+         
+         main:
+         
+         other:
+         
+         -->
     <h1>Main Page</h1>
     <b>I build stuff, break stuff, and figure out why it broke.</b>
     <p>
@@ -119,54 +87,61 @@
     <hr>
     <h2>Featured Projects</h2>
     <div style="display: flex; justify-content: center;">
-    <a href="./projects/minecraft.html"><img src="./images/PC1.jpg" width="300" style="margin: 7px;"></a>
-    <a href="./projects/rasppicluster.html"><img src="./images/PICluster.jpg" width="300" style="margin: 7px;"></a>
+        <a href="./projects/minecraft.html"><img src="./images/PC1.jpg" width="300" style="margin: 7px;"></a>
+        <a href="./projects/rasppicluster.html"><img src="./images/PICluster.jpg" width="300" style="margin: 7px;"></a>
     </div>
     <hr>
     <h2>Skills</h2>
     <p>
         <b>Networking</b>
-        <ul>
-            <li>VLANs</li>
-            <li>Subnetting</li>
-            <li>Routing</li>
-            <li>Firewall configuration</li>
-            <li>IOS configuration</li>
-            <li>Endpoint configuration</li>
-        </ul>
-        <b>Systems</b>
-        <ul>
-            <li>Windows</li>
-            <li>Windows Administration</li>
-            <li>Linux</li>
-            <li>Virtualization</li>
-            <li>Hardware & Software Troubleshooting</li>
-        </ul>
-        <b>Certifications</b>
-        <ul>
-            <li>10 Hour OSHA General</li>
-            <li>CCST Networking</li>
-            <li>CCST IT Support</li>
-        </ul>
+    <ul>
+        <li>VLANs</li>
+        <li>Subnetting</li>
+        <li>Routing</li>
+        <li>Firewall configuration</li>
+        <li>IOS configuration</li>
+        <li>Endpoint configuration</li>
+    </ul>
+    <b>Systems</b>
+    <ul>
+        <li>Windows</li>
+        <li>Windows Administration</li>
+        <li>Linux</li>
+        <li>Virtualization</li>
+        <li>Hardware & Software Troubleshooting</li>
+    </ul>
+    <b>Certifications</b>
+    <ul>
+        <li>10 Hour OSHA General</li>
+        <li>CCST Networking</li>
+        <li>CCST IT Support</li>
+    </ul>
     </p>
     <hr>
     <h2>What im currently working on</h2>
     <p>
         <b>Certifications</b>
-        <ul>
-            <li>CompTIA A+</li>
-            <li>CompTIA Security+</li>
-        </ul>
-        <b>Cybersecurity</b>
-        <ul>
-            <li><a href="https://tryhackme.com">TryHackMe</a></li>
-            <li><a href="https://www.hackthissite.org/">HackThisSite</a></li>
-        </ul>
-        <b>Projects</b>
-        <ul>
-            <li>Upgrading my <a href="./projects/homeserver.html">Homelab</a></li>
-        </ul>
+    <ul>
+        <li>CompTIA A+</li>
+        <li>CompTIA Security+</li>
+    </ul>
+    <b>Cybersecurity</b>
+    <ul>
+        <li><a href="https://tryhackme.com">TryHackMe</a></li>
+        <li><a href="https://www.hackthissite.org/">HackThisSite</a></li>
+    </ul>
+    <b>Projects</b>
+    <ul>
+        <li>Upgrading my <a href="./projects/homeserver.html">Homelab</a></li>
+    </ul>
     </p>
+    <script>
+        fetch("https://countapi.mileshilliard.com/api/v1/hit/matikanefukukitaru")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("scannedNumber").innerText = data.value;
+            });
+    </script>
 </body>
 
 </html>

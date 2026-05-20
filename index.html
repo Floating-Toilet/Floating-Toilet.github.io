@@ -26,6 +26,48 @@
             background-color: #ff8c00;
             transform: scale(1.5);
         }
+
+        .container {
+            position: relative;
+            width: 20%;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container:hover .image {
+            opacity: 0.3;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: #ff8c00;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
     </style>
 </head>
 
@@ -69,7 +111,7 @@
                     Projects<br>
                     <img src="./images/clueless.gif" width="100" height="auto">
                 </td>
-         <!--       <td onclick="location.href='./files/placeholder.html'">
+                <!--       <td onclick="location.href='./files/placeholder.html'">
                     Resume<br> // maybe i will include this
                     <img src="./images/placeholder.png" width="100" height="auto">
                 </td>-->
@@ -77,9 +119,9 @@
                     Github<br>
                     <img src="./images/GitHub_Invertocat_White.png" width="100" height="auto">
                 </td>
-                <td>
+                <td onclick="location.href='mailto:d.hance2014@gmail.com'">
                     Contact<br>
-                    Email: email@email.com
+                    Email: d.hance2014@gmail.com
                 </td>
             </tr>
         </tbody>
@@ -87,8 +129,18 @@
     <hr>
     <h2>Featured Projects</h2>
     <div style="display: flex; justify-content: center;">
-        <a href="./projects/minecraft.html"><img src="./images/PC1.jpg" width="300" style="margin: 7px;"></a>
-        <a href="./projects/rasppicluster.html"><img src="./images/PICluster.jpg" width="300" style="margin: 7px;"></a>
+        <div class="container" onclick="location.href='./projects/minecraft.html'">
+            <img src="./images/PC1.jpg" class="image">
+            <div class="middle">
+                <div class="text">The Hebrew Hammer</div>
+            </div>
+        </div>
+        <div class="container" onclick="location.href='./projects/rasppicluster.html'">
+            <img src="./images/PICluster.jpg" class="image">
+            <div class="middle">
+                <div class="text">Raspberry Pi Cluster</div>
+            </div>
+        </div>
     </div>
     <hr>
     <h2>Skills</h2>

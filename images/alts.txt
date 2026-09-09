@@ -1,0 +1,19 @@
+clueless.gif - Umamusume Jungle Pocket thinking with monkey in thought bubble crashing cymbals
+construction.gif - Site is still under construction
+GitHub_invertocat_White.png - Github logo
+HomeNetwork.png - Modem to Edge Router to network switch, splits Plex server and Gaming PC, swtich to switch, splits, Wireless AP, Minecraft server, and Raspberry PI 3b+ 
+homeServer.jpg - Spare gaming pc used as a server
+ITticket.jpg - Scene from Interstellar "1 hour here is 7 years on earth. Great we'll wait for IT to respond to my ticket."
+meme.png - Wizards in your area want to see your orb
+PC1.jpg - Internals of the Hebrew Hammer
+PC2.jpg - Stack of HP DL360 G6
+PhysicalMedia4ever.webp - Chad "Physical Media forever"
+PICluster.jpg - Group of Raspberry PIs computing
+placeholder.png - Blank placeholder image landscape
+Portfoward.png - Port Name: Minecraft, Internal Port: 25565, External Port: 25565, Internal IP: 192.168.1.2, Enabled: True
+ragnarViking.png - Chibi viking
+the-hebrew-hammer.gif - Rotating sandwich "The Hebrew Hammer"
+tmshine.jpg - Umamusume TM Opera O
+Torena.png - 
+vivlos3.png - I have hired this :3 to stare at you, Umamusume Vivlos staring
+WIZARD.png - Wizards in your area want to see your orb

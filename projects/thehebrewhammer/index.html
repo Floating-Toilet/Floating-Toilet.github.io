@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
     <title>Computer Black Magic</title>
-    <link rel="icon" href="../../images/placeholder.png">
+    <link rel="icon" href="/images/placeholder.png">
 </head>
 
 <body>
     <header>
         <div class="site-identity">
-            <a href="../../"><img src="../../images/placeholder.png" class="headimg" alt="Blank placeholder image landscape"></a>
-            <a href="../../">
+            <a href="/"><img src="/images/placeholder.png" class="headimg" alt="Blank placeholder image landscape"></a>
+            <a href="/">
                 <h1>Computer Black Magic</h1>
             </a>
         </div>
         <nav class="site-navigation">
             <ul aria-label="Main Navigation">
-                <li><a href="../../">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <!--<li><a href="../../projects" aria-current="page">Projects</a></li>-->
                 <!--<li><a href="./resources">Resources</a></li>-->
-                <li><a href="../../extra">Extra</a></li>
+                <li><a href="/extra">Extra</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h2 class="project-big-title">The Hebrew Hammer</h2>
         <p class="project-small-title">A Minecraft Server</p>
-        <img src="../../images/PC1.jpg" alt="The Hebrew Hammer Minecraft server project" class="hero-image">
+        <img src="/images/PC1.jpg" alt="The Hebrew Hammer Minecraft server project" class="hero-image">
         <br>
         <hr>
         <h3 class="title">Overview</h3>
@@ -43,15 +43,38 @@
             <li>Software: Java · Fabric Mod Loader · Playit.gg</li>
             <li>Network: Portforwarding · Firewalls</li>
         </ul>
-        <h3 class="title">What I built</h3>
-        <p>Explanation of the actual implementation.</p>
+        <h3 class="title">What I built / The Story</h3>
+        <p>Me and a friend had a wonderful idea of setting up a Minecraft server at Auburn as an "extra credit project" (Our instructor encouraged the class to do something in the lab to get hands on experience with the skills learned in class)</p>
+        <p>The first computer was a spare and mostly gutted out pc (Seen above), where missing parts were found in PCs that were in similar states.</p>
+        <p>After the usual first boot into BIOS making any necessary configurations then flashing the drive with Ubuntu Server OS and setup, the server was ready.</p>
+        <p>In order to figure out what type of Minecraft (Vanilla, Modded, or Purely server side plugins) we needed to install we asked the playerbase and they came back with various answers, but the largest deciding factor was that over half the player base plays on Bedrock Console edition leaving us to stay Vanilla or have server side plugins that still work with Bedrock</p>
+        <p>After some research we landed with <a href="https://fabricmc.net/" rel="noopener noreferrer" target="_blank">Fabric</a> mod loader, with the following mods:</p>
+        <ul>
+            <li><a href="https://modrinth.com/mod/fabric-api" rel="noopener noreferrer" target="_blank">Fabric API</a></li>
+            <li><a href="https://modrinth.com/mod/ferrite-core" rel="noopener noreferrer" target="_blank">FerriteCore</a></li>
+            <li><a href="https://modrinth.com/mod/lithium" rel="noopener noreferrer" target="_blank">Lithium</a></li>
+            <li><a href="https://modrinth.com/mod/krypton" rel="noopener noreferrer" target="_blank">Krypton</a></li>
+            <li><a href="https://modrinth.com/mod/clumps" rel="noopener noreferrer" target="_blank">Clumps</a></li>
+            <li><a href="https://modrinth.com/mod/c2me-fabric" rel="noopener noreferrer" target="_blank">Concurrent Chunk Management Engine</a></li>
+            <li><a href="https://modrinth.com/mod/packet-fixer" rel="noopener noreferrer" target="_blank">Packet Fixer</a></li>
+            <li><a href="https://modrinth.com/datapack/terralith" rel="noopener noreferrer" target="_blank">Terralith</a></li>
+            <li><a href="https://modrinth.com/mod/lithostitched" rel="noopener noreferrer" target="_blank">Lithostitched</a></li>
+            <li><a href="https://modrinth.com/plugin/chunky" rel="noopener noreferrer" target="_blank">Chunky</a></li>
+            <li><a href="https://modrinth.com/plugin/geyser" rel="noopener noreferrer" target="_blank">Geyser</a></li>
+            <li><a href="https://modrinth.com/mod/floodgate" rel="noopener noreferrer" target="_blank">Floodgate</a></li>
+        </ul>
+        <p>After testing connections from Java and Bedrock edition on the internal network we had to set up port forwarding—Our lab network is behind double NAT, this is important—While we had access to the lab's router we didn't have access to the main true edge router of the school</p>
+        <p>We asked our instructor to go ask tech if they could port forward on their end but even after they said it was done it still didn't work. Leading us to figure out a different way to access the server on an external network, (To this day I still don't remember how I realized the solution<!-- Possibly like Dmitri Mendeleev? but without writing it down-->) I had suggested using a proxy server. Initally I looked at Cloudflare tunnels however I somehow couldn't figure out how to set it up, leading me to <a href="https://playit.gg/" rel="noopener noreferrer" target="_blank">playit.gg</a> concluding the issue of being unable to access the server outside the internal network.</p>
+        <p>At some point we had moved our infrastructure to a HP DL360 G6 server, mostly because we wanted to see if anything was different in a regular desktop vs a server.</p>
         <h3 class="title">Challenges & Troubleshooting</h3>
-        <p>Problems encountered and how I diagnosed/fixed them.</p>
+        <p>The desktop computer we had started with was gutted out and missing parts, our solution was to use the other gutted out desktops.</p>
+        <p>We did not know the needs of the users, our solution was to ask them.</p>
+        <p>We were unable to access the server on a external network despite having portforwarding done, our solution was to use a proxy server.</p>
         <h3 class="title">What I learned</h3>
-        <p>Skills and knowledge gained from the project.</p>
+        <p>I had learned how to ask users of their needs, the purposes of a proxy server, and how to use limited resources in an efficient manner.</p>
         <br>
         <hr>
-        <a href="../..">
+        <a href="/">
             <h2>Back To Home →</h2>
         </a>
     </main>

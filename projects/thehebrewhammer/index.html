@@ -36,14 +36,14 @@
         <p>My goal was to deploy a stable, secure multiplayer Minecraft server whilst gaining hands on experience with the Linux command line and Networking.</p>
         <h3 class="title">Technical Focus</h3>
         <p>Linux · Networking · Server Administration · Minecraft</p>
-        <h3 class="title">Hardware / Enviroment</h3>
+        <h3 class="title">Hardware / Environment</h3>
         <ul>
             <li>Hardware: Old Random Desktop and later on, a HP DL360 G6 server</li>
             <li>OS: Ubuntu Server</li>
             <li>Software: Java · Fabric Mod Loader · Playit.gg</li>
             <li>Network: Portforwarding · Firewalls</li>
         </ul>
-        <h3 class="title">What I built / The Story</h3>
+        <h3 class="title">Project Development</h3>
         <p>Me and a friend had a wonderful idea of setting up a Minecraft server at Auburn as an "extra credit project" (Our instructor encouraged the class to do something in the lab to get hands on experience with the skills learned in class)</p>
         <p>The first computer was a spare and mostly gutted out pc (Seen above), where missing parts were found in PCs that were in similar states.</p>
         <p>After the usual first boot into BIOS making any necessary configurations then flashing the drive with Ubuntu Server OS and setup, the server was ready.</p>
@@ -67,9 +67,11 @@
         <p>We asked our instructor to go ask tech if they could port forward on their end but even after they said it was done it still didn't work. Leading us to figure out a different way to access the server on an external network, (To this day I still don't remember how I realized the solution<!-- Possibly like Dmitri Mendeleev? but without writing it down-->) I had suggested using a proxy server. Initally I looked at Cloudflare tunnels however I somehow couldn't figure out how to set it up, leading me to <a href="https://playit.gg/" rel="noopener noreferrer" target="_blank">playit.gg</a> concluding the issue of being unable to access the server outside the internal network.</p>
         <p>At some point we had moved our infrastructure to a HP DL360 G6 server, mostly because we wanted to see if anything was different in a regular desktop vs a server.</p>
         <h3 class="title">Challenges & Troubleshooting</h3>
-        <p>The desktop computer we had started with was gutted out and missing parts, our solution was to use the other gutted out desktops.</p>
-        <p>We did not know the needs of the users, our solution was to ask them.</p>
-        <p>We were unable to access the server on a external network despite having portforwarding done, our solution was to use a proxy server.</p>
+        <h4>Problem: The server was inaccessible from an external network</h4>
+        <p>Investigation: The lab network was behind double NAT, we had access from the lab's WAN address but not the schools WAN address.</p>
+        <p>Inital solution: Port forwarding on the lab router and requested port forwarding on the schools edge router. But the server remained inaccessible.</p>
+        <p>Solution: I investigated alternative ways of exposing the server and ultimately used a proxy/tunneling service.</p>
+        <p>Result: Players outside the internal network were able to connect.</p>
         <h3 class="title">What I learned</h3>
         <p>I had learned how to ask users of their needs, the purposes of a proxy server, and how to use limited resources in an efficient manner.</p>
         <br>
@@ -81,6 +83,7 @@
     <footer>
         <hr>
         <p>Made by Dustin H.</p>
+        <a href="mailto:d.hance2014@gmail.com">Contact (Email)</a>
     </footer>
 </body>
 

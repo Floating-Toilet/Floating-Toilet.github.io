@@ -1,3 +1,2 @@
 # Floating-Toilet.github.io
-A Personal portfolio
-just realized that i should look at this site on a larger monitor time to time
+AI Use: css assistance, quick review (humans did look at it too), general grammer and coding mistakes made in the middle of the night.

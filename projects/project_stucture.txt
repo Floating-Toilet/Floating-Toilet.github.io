@@ -1,0 +1,11 @@
+Home Lab:
+Architecture → Services → Storage → Networking → Backups → Troubleshooting → Lessons Learned
+
+Raspberry Pi Cluster:
+Hardware → Cluster Architecture → Software → Experiments → Results → Lessons Learned
+
+Auburn Projects:
+Coursework → Individual Projects → Technologies → What I Learned
+
+Troubleshooting Case Studies:
+Individual Problem → Environment → Investigation → Findings → Resolution → Result → Lessons Learned

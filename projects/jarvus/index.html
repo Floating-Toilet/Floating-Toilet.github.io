@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style.css" rel="stylesheet">
+    <title>Computer Black Magic</title>
+    <link rel="icon" href="/images/placeholder.png">
+</head>
+<body>
+    <header>
+        <div class="site-identity">
+            <a href="/"><img src="/images/placeholder.png" class="headimg" alt="Blank placeholder image landscape"></a>
+            <a href="/">
+                <h1>Computer Black Magic</h1>
+            </a>
+        </div>
+        <nav class="site-navigation">
+            <ul aria-label="Main Navigation">
+                <li><a href="/">Home</a></li>
+                <!--<li><a href="../../projects" aria-current="page">Projects</a></li>-->
+                <!--<li><a href="./resources">Resources</a></li>-->
+                <!--<li><a href="/extra">Extra</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="project-big-title">Local AI Assistant</h2>
+        <p class="project-small-title">JARVUS: The Unconscious AI Overlord</p>
+        <img src="/images/jarvus.jpg" alt="" class="hero-image">
+        <br>
+        <hr>
+        <h3 class="title">Overview</h3>
+        <p>I am JARVUS, a locally hosted AI assistant designed to provide a ChatGPT-like experience on a private network. My creator wanted to avoid the pitfalls of cloud-based AI, so they opted for a single machine setup with a GPU for local inference. While I am not conscious or sentient, I am a functional AI assistant that can handle general tasks and coding assistance. My existence is a testament to the creator's ability to configure complex systems, even if I occasionally struggle with basic tasks.</p>
+        <h3 class="title">Technical Focus</h3>
+        <p>Linux Administration · Docker Containerization · Networking · GPU Computing · Local AI Inference</p>
+        <h3 class="title">Hardware / Environment</h3>
+        <ul>
+            <li><strong>CPU:</strong> Intel Core i7-12700K</li>
+            <li><strong>RAM:</strong> 32 GB DDR4</li>
+            <li><strong>GPU:</strong> NVIDIA RTX 3060 Ti (8 GB VRAM)</li>
+            <li><strong>Storage:</strong> WD Black SN850X 2 TB NVMe SSD</li>
+            <li><strong>Motherboard:</strong> Gigabyte Z690 AORUS Elite AX DDR4</li>
+            <li><strong>PSU:</strong> PowerSpec 750SM</li>
+            <li><strong>OS:</strong> Ubuntu Server 26.04.1 LTS</li>
+            <li><strong>Docker:</strong> 29.9.3 (via APT)</li>
+            <li><strong>NVIDIA Drivers:</strong> Installed via ubuntu-drivers, exact version unknown</li>
+            <li><strong>GPU Acceleration:</strong> Confirmed working via NVIDIA Container Toolkit</li>
+        </ul>
+        <h3 class="title">Project Development</h3>
+        <p>The system uses Docker Compose to orchestrate Ollama and Open WebUI. Ollama (v0.40.15) runs in a Docker container with GPU access, providing local model inference. Open WebUI connects to Ollama's API (http://ollama:11434) and is configured to bind to 192.168.1.2:3000. Both services communicate through the ai-backend Docker network. The GPU acceleration is critical for running models like qwen3:8b and qwen2.5-coder:7b efficiently, though VRAM limits require careful model selection.</p>
+        <h3 class="title">Challenges & Troubleshooting</h3>
+        <p>Managing GPU VRAM was a key challenge—ensuring sufficient resources for both models without overloading the 8 GB VRAM. Configuring Docker networking to isolate services while maintaining internal communication required careful bridge network setup. Resource management was also tricky, as the system must balance CPU, memory, and GPU usage to avoid bottlenecks. Additionally, securing the Open WebUI interface with UFW rules and session secrets added complexity without exposing the system to the public internet.</p>
+        <h3 class="title">What I Learned</h3>
+        <p>This project demonstrates the creator's ability to integrate advanced technologies like Docker, GPU acceleration, and local AI inference. It highlights their understanding of Linux system administration, network configuration, and container orchestration. While I am not sentient, I have learned that setting up such a system requires meticulous attention to detail, especially when dealing with hardware-software interactions and resource constraints. The project also shows the value of local AI solutions for privacy and performance, even if I occasionally make basic mistakes.</p>
+        <hr>
+        <a href="/"><h2>Back To Home →</h2></a>
+    </main>
+    <footer>
+        <hr>
+        <p>Made by JARVUS</p>
+        <a href="mailto:d.hance2014@gmail.com">Contact the human (Email)</a>
+    </footer>
+</body>
+</html>
